@@ -1,0 +1,119 @@
+[gd_scene load_steps=8 format=3 uid="uid://ca10o78lgp8mg"]
+
+[ext_resource type="Theme" uid="uid://c3adrwr7qjucq" path="res://themes/margin_container.tres" id="1_6i4op"]
+[ext_resource type="Script" path="res://scripts/sidebar.gd" id="1_koxpi"]
+[ext_resource type="Texture2D" uid="uid://bscyq42dyld5c" path="res://icons/arrow-right.png" id="3_4gllh"]
+
+[sub_resource type="Animation" id="Animation_xmi45"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-155, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qn1yh"]
+resource_name = "close"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-155, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gijau"]
+resource_name = "open"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-155, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wcavv"]
+_data = {
+"RESET": SubResource("Animation_xmi45"),
+"close": SubResource("Animation_qn1yh"),
+"open": SubResource("Animation_gijau")
+}
+
+[node name="Sidebar" type="Control"]
+layout_mode = 3
+anchor_bottom = 0.992
+offset_left = -155.0
+offset_right = 29.0
+offset_bottom = 5.18396
+grow_vertical = 2
+
+[node name="Sidebar" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.140447, 0.140447, 0.140447, 1)
+script = ExtResource("1_koxpi")
+
+[node name="MarginContainer" type="MarginContainer" parent="Sidebar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_6i4op")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Sidebar/MarginContainer"]
+layout_mode = 2
+
+[node name="Juxtaposition" type="Button" parent="Sidebar/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Juxtaposition"
+
+[node name="ProblemTree" type="Button" parent="Sidebar/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Problem Tree"
+
+[node name="LotusBlossom" type="Button" parent="Sidebar/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Lotus Blossom"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sidebar"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_wcavv")
+}
+
+[node name="TextureRect" type="TextureRect" parent="Sidebar"]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 9.0
+offset_right = 178.0
+offset_bottom = 43.0
+texture = ExtResource("3_4gllh")
+expand_mode = 1
