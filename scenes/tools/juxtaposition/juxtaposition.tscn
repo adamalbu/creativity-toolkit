@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://bb7uu6ohnqgoo"]
+
+[ext_resource type="Script" path="res://scenes/tools/juxtaposition/juxtaposition.gd" id="1_0vclm"]
+[ext_resource type="Theme" uid="uid://c3adrwr7qjucq" path="res://themes/margin_container.tres" id="1_4aqy3"]
+[ext_resource type="PackedScene" uid="uid://cxafulmx28nog" path="res://scenes/tools/juxtaposition/row.tscn" id="2_mf1kp"]
+[ext_resource type="PackedScene" uid="uid://ca10o78lgp8mg" path="res://scenes/sidebar.tscn" id="3_cxdp0"]
+[ext_resource type="Texture2D" uid="uid://bc7snstybyerv" path="res://icons/Add.svg" id="4_ugab7"]
+
+[node name="Juxtaposition" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0vclm")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_4aqy3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Row" parent="ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_mf1kp")]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="AddButton" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Add"
+icon = ExtResource("4_ugab7")
+
+[node name="Sidebar" parent="." instance=ExtResource("3_cxdp0")]
+layout_mode = 1
+
+[connection signal="pressed" from="ScrollContainer/MarginContainer/VBoxContainer/AddButton" to="." method="_on_add_button_pressed"]

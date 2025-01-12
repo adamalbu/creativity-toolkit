@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq81ssbl10qrd"
-path="res://.godot/imported/add.png-21abb41ff0da259ea2ccbb4becce111a.ctex"
+uid="uid://d2cx1hkxagvue"
+path="res://.godot/imported/Ranom.svg-e2555a59201b8079d085544087a9319b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icons/add.png"
-dest_files=["res://.godot/imported/add.png-21abb41ff0da259ea2ccbb4becce111a.ctex"]
+source_file="res://icons/Ranom.svg"
+dest_files=["res://.godot/imported/Ranom.svg-e2555a59201b8079d085544087a9319b.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

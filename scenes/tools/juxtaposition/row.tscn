@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://cxafulmx28nog"]
+
+[ext_resource type="Theme" uid="uid://ctuf0i0htw5ly" path="res://themes/textbox.tres" id="1_1pxjk"]
+[ext_resource type="Script" path="res://scenes/tools/juxtaposition/row.gd" id="1_8elxy"]
+[ext_resource type="Texture2D" uid="uid://dq81ssbl10qrd" path="res://icons/special/AddLarge.png" id="2_w1ns7"]
+[ext_resource type="Texture2D" uid="uid://bscyq42dyld5c" path="res://icons/special/ArrowRightLarge.png" id="3_p2g0y"]
+[ext_resource type="Texture2D" uid="uid://0mh0apbi6l6i" path="res://icons/Remove.svg" id="4_7dwvv"]
+[ext_resource type="Texture2D" uid="uid://d2cx1hkxagvue" path="res://icons/Ranom.svg" id="6_y0p6c"]
+
+[node name="Row" type="HBoxContainer"]
+script = ExtResource("1_8elxy")
+
+[node name="Word1" type="LineEdit" parent="."]
+layout_mode = 2
+theme = ExtResource("1_1pxjk")
+expand_to_text_length = true
+
+[node name="PlusIcon" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_w1ns7")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Word2" type="LineEdit" parent="."]
+layout_mode = 2
+theme = ExtResource("1_1pxjk")
+expand_to_text_length = true
+
+[node name="ArrowIcon" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("3_p2g0y")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Idea" type="LineEdit" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_1pxjk")
+
+[node name="RemoveRowButton" type="Button" parent="."]
+layout_mode = 2
+tooltip_text = "Remove row"
+icon = ExtResource("4_7dwvv")
+
+[node name="RandomizeButton" type="Button" parent="."]
+layout_mode = 2
+tooltip_text = "Generate random words"
+icon = ExtResource("6_y0p6c")
+
+[connection signal="text_changed" from="Word1" to="." method="_on_word_1_text_changed"]
+[connection signal="text_changed" from="Word2" to="." method="_on_word_2_text_changed"]
+[connection signal="pressed" from="RemoveRowButton" to="." method="_on_remove_row_button_pressed"]
+[connection signal="pressed" from="RandomizeButton" to="." method="_on_randomize_button_pressed"]
