@@ -93,11 +93,11 @@ layout_mode = 2
 
 [node name="Juxtaposition" type="Button" parent="Sidebar/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Juxtaposition"
+text = "Words"
 
 [node name="ProblemTree" type="Button" parent="Sidebar/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Problem Tree"
+text = "Cause & Effect"
 
 [node name="LotusBlossom" type="Button" parent="Sidebar/MarginContainer/VBoxContainer"]
 layout_mode = 2
