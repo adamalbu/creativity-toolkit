@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d2cx1hkxagvue"
-path="res://.godot/imported/Ranom.svg-e2555a59201b8079d085544087a9319b.ctex"
+path="res://.godot/imported/Random.svg-17eba4e5af683521f93087e2fbc31ef1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icons/Ranom.svg"
-dest_files=["res://.godot/imported/Ranom.svg-e2555a59201b8079d085544087a9319b.ctex"]
+source_file="res://icons/Random.svg"
+dest_files=["res://.godot/imported/Random.svg-17eba4e5af683521f93087e2fbc31ef1.ctex"]
 
 [params]
 
